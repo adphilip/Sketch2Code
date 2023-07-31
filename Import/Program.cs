@@ -16,7 +16,7 @@ namespace Import
         static void Main(string[] args)
         {
             // Create the Api, passing in the training key
-            string trainingKey = "7341df7925d54953803fbeca84eede77";
+            string trainingKey = "f6a83ee6a5ed481bb14ca9fe9b6745da";
             if (String.IsNullOrEmpty(trainingKey)) 
             {
                 Console.WriteLine("The custom vision training key needs to be set.");
@@ -24,7 +24,8 @@ namespace Import
             }
 
             TrainingApi trainingApi = new TrainingApi() { ApiKey = trainingKey };
-
+            Console.WriteLine("apikey:", trainingApi.ApiKey);
+            
             // Find the object detection project
             var domains = trainingApi.GetDomains();
             var objDetectionDomain = domains.FirstOrDefault(d => d.Type == "ObjectDetection");
