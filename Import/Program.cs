@@ -25,9 +25,10 @@ namespace Import
 
             TrainingApi trainingApi = new TrainingApi() { ApiKey = trainingKey };
             Console.WriteLine("apikey:", trainingApi.ApiKey);
-            
+
             // Find the object detection project
             var domains = trainingApi.GetDomains();
+
             var objDetectionDomain = domains.FirstOrDefault(d => d.Type == "ObjectDetection");
             var project = trainingApi.GetProjects().FirstOrDefault(p => p.Settings.DomainId == objDetectionDomain.Id);
 

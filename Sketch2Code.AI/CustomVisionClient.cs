@@ -18,7 +18,7 @@ namespace Sketch2Code.AI
     public abstract class CustomVisionClient
     {
         protected const int MaxRetries = 10;
-        protected const string CustomVisionEndpoint = "https://southcentralus.api.cognitive.microsoft.com/";
+        protected const string CustomVisionEndpoint = "https://westus2.api.cognitive.microsoft.com/";
 
         // Shared instance: https://github.com/mspnp/performance-optimization/blob/master/ImproperInstantiation/docs/ImproperInstantiation.md
         private static readonly HttpClient Client = new HttpClient { Timeout = TimeSpan.FromMinutes(1) };
